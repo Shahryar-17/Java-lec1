@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math.floor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            /* background: linear-gradient(90deg, rgb(248, 32, 230), rgb(91, 182, 235)); */
+            background: url(3d-rendering-hexagonal-texture-background_23-2150796421.avif);
+            background-repeat: no-repeat;
+            background-size: 1300px;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 24rem;
+            gap: 2rem;
+            border-radius: .5rem;
+            border-style: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+            padding: 1.5rem;
+            backdrop-filter: blur(17px);
+        }
+
+        div h2 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        div button {
+            border-style: none;
+            padding: .7rem 1rem;
+            border-radius: .5rem;
+            color: white;
+            background: black;
+            cursor: pointer;
+        }
+
+        div button:hover {
+            background-color: crimson;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.9);
+            margin: 3rem;
+            margin-bottom: 5rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
+            font-size: 1.5rem;
+        }
+        @media (max-width:400px) {
+            div{
+                width: 14rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random Movie Selector</h1>
+    <div>
+        <h2>Having trouble finding a good movie? ... Let us suggest you a movie</h2>
+        <button onclick="showMovie()">Show Movie</button>
+        <p id="movie"></p>
+    </div>
+
+    <script>
+        let movies = ["Spider Man", "Super Man", "Megan", "Snow White", "Annabelle", "Haunted House", "Mumbai 125km", "Kill Boksoon", "Target", "Baby John", "Deva", "Ballerina", "Carter", "Forgotten", "Wonderland"]
+        function showMovie() {
+            let randomquote = Math.floor(Math.random() * movies.length)
+            document.getElementById("movie").textContent = movies[randomquote]
+            // We can use both textContent & innerHTML
+            // document.getElementById("quote").innerHTML = quotes[randomquote]
+        }
+    </script>
+</body>
+
+</html>
